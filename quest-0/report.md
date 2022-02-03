@@ -1,4 +1,4 @@
-# Quest Name
+# Quest 1: Fish Feeder
 Authors: Keven DeOliveira, Homoon Brian Jung, Fabio Amado
 
 Date: 2020-02-08
