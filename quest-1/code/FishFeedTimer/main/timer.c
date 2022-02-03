@@ -19,7 +19,7 @@
 
 #define BTN_GPIO 34
 
-#define feeder_interval_seconds 120
+#define feeder_interval_seconds 3660
 
 // 14-Segment Display
 #define SLAVE_ADDR                         0x70 // alphanumeric address
@@ -412,6 +412,8 @@ static void test_alpha_display() {
     char hour[5];
     char minute[5];
     char second[5];
+    char hr_min[10];
+    char min_sec[10];
 
     // Debug
     int ret;
@@ -431,27 +433,34 @@ static void test_alpha_display() {
       sprintf(hour, "%02d", time_arr[0]);
       sprintf(minute, "%02d", time_arr[1]);
       sprintf(second, "%02d", time_arr[2]);
+
+      strcpy(hr_min, hour);
+      strcat(hr_min, minute);
+      
+      strcpy(min_sec, minute);
+      strcat(min_sec, second);
       
       int i;  
 
-      uint16_t displaybuffer_hr[8];
-      uint16_t displaybuffer_min[8];
+      uint16_t displaybuffer[8];
 
       for (i = 0; i < 4; i++) { // i think this is needed otherwise text wouldnt change
-          displaybuffer_hr[i] = alphafonttable[' '];
-      }
-
-      for (i = 0; i < 4; i++) { // i think this is needed otherwise text wouldnt change
-          displaybuffer_min[i] = alphafonttable[' '];
+          displaybuffer[i] = alphafonttable[' '];
       }
 
       i = 0;
-      while (i < 4 && hour[i] != '\0') { // go until 4 chars or end of string
-        displaybuffer_hr[i] = alphafonttable[(int) hour[i]];
-        displaybuffer_min[i] = alphafonttable[(int) minute[i]];
-        i++;
+      if (time_arr[0] != 0) {
+        while (i < 4 && hr_min[i] != '\0') { // go until 4 chars or end of string
+            displaybuffer[i] = alphafonttable[(int) hr_min[i]];
+            i++;
+        }
       }
-
+      else {
+        while (i < 4 && min_sec[i] != '\0') { // go until 4 chars or end of string
+            displaybuffer[i] = alphafonttable[(int) min_sec[i]];
+            i++; 
+        } 
+      }
 
       // Send commands characters to display over I2C
       i2c_cmd_handle_t cmd4 = i2c_cmd_link_create();
@@ -459,8 +468,8 @@ static void test_alpha_display() {
       i2c_master_write_byte(cmd4, ( SLAVE_ADDR << 1 ) | WRITE_BIT, ACK_CHECK_EN);
       i2c_master_write_byte(cmd4, (uint8_t)0x00, ACK_CHECK_EN);
       for (uint8_t i=0; i<8; i++) {
-        i2c_master_write_byte(cmd4, displaybuffer_min[i] & 0xFF, ACK_CHECK_EN);
-        i2c_master_write_byte(cmd4, displaybuffer_min[i] >> 8, ACK_CHECK_EN);
+        i2c_master_write_byte(cmd4, displaybuffer[i] & 0xFF, ACK_CHECK_EN);
+        i2c_master_write_byte(cmd4, displaybuffer[i] >> 8, ACK_CHECK_EN);
       }
       i2c_master_stop(cmd4);
       ret = i2c_master_cmd_begin(I2C_EXAMPLE_MASTER_NUM, cmd4, 1000 / portTICK_RATE_MS);
