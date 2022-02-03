@@ -1,7 +1,7 @@
-# Quest Name
-Authors: FirstName1 LastName1, FirstName2 LastName2, FirstName3 LastName 3
+# Quest 1: Fish Feeder
+Authors: Keven DeOliveira, Homoon Brian Jung, Fabio Amado
 
-Date: YYYY-MM-DD
+Date: 2020-02-08
 -----
 
 ## Summary
@@ -37,11 +37,13 @@ Date: YYYY-MM-DD
 
 
 ## Sketches and Photos
+
 <center><img src="./images/ece444.png" width="25%" /></center>  
 <center> </center>
 
 
 ## Supporting Artifacts
+
 - [Link to video demo](). Not to exceed 120s
 
 
