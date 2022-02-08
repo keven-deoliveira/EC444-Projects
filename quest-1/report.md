@@ -47,6 +47,24 @@ Date: 2022-02-08
 
 ## Modules, Tools, Source Used Including Attribution
 
+Used Modules:
+- <stdio.h>
+- <string.h>
+- "esp_types.h"
+- "driver/gpio.h"
+- "freertos/FreeRTOS.h"
+- "freertos/task.h"
+- "freertos/queue.h"
+- "driver/periph_ctrl.h"
+- "driver/timer.h"
+- "driver/uart.h"
+- "esp_vfs_dev.h"
+- "driver/i2c.h"
+- "sdkconfig.h"
+- "esp_log.h"
+- "driver/mcpwm.h"
+
+
 ## References
 
 -----
