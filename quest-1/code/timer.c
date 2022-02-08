@@ -1,18 +1,20 @@
 #include <stdio.h>
 #include <string.h>
+
+#include "sdkconfig.h"
 #include "esp_types.h"
-#include "driver/gpio.h"
+#include "esp_vfs_dev.h"
+#include "esp_log.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
 #include "driver/periph_ctrl.h"
 #include "driver/timer.h"
 #include "driver/uart.h"
-#include "esp_vfs_dev.h"
-#include "driver/i2c.h"
-#include "sdkconfig.h"
-#include "esp_log.h"
 #include "driver/mcpwm.h"
+#include "driver/i2c.h"
+#include "driver/gpio.h"
+#include "display.h"
 
 // TIMER DEFINITIONS
 #define TIMER_DIVIDER         16    //  Hardware timer clock divider
