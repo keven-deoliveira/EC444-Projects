@@ -1,3 +1,8 @@
+#ifndef DISPLAY_H
+#define DISPLAY_H
+
+#include <stdint.h>
+
 // Table for Alphanumeric display
 static const uint16_t alphafonttable[] =  {
 	0b0000000000000000,
@@ -129,3 +134,5 @@ static const uint16_t alphafonttable[] =  {
 	0b0000010100100000, // ~
 	0b0011111111111111,
 };
+
+#endif
