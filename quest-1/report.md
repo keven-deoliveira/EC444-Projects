@@ -1,7 +1,7 @@
-# Quest Name
-Authors: FirstName1 LastName1, FirstName2 LastName2, FirstName3 LastName 3
+# Fish Feeder
+Authors: Keven DeOliveira, Brian Jung, Fabio Amado
 
-Date: YYYY-MM-DD
+Date: 2022-02-08
 -----
 
 ## Summary
@@ -37,7 +37,7 @@ Date: YYYY-MM-DD
 
 
 ## Sketches and Photos
-<center><img src="./images/ece444.png" width="25%" /></center>  
+<center><img src="./images/Fish Feeder Circuit.jpg" width="25%" /></center>  
 <center> </center>
 
 
