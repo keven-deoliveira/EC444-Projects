@@ -14,20 +14,20 @@
 #include "esp_log.h"
 #include "driver/mcpwm.h"
 
+// TIMER DEFINITIONS
 #define TIMER_DIVIDER         16    //  Hardware timer clock divider
 #define TIMER_SCALE           (TIMER_BASE_CLK / TIMER_DIVIDER)  // to seconds
 #define TIMER_INTERVAL_SEC   (1)    // Sample test interval for the first timer
 #define TEST_WITH_RELOAD      1     // Testing will be done with auto reload
 
+// SERVO DEFINITIONS
 #define SERVO_MIN_PULSEWIDTH_US (500) // Minimum pulse width in microsecond
 #define SERVO_MAX_PULSEWIDTH_US (2500) // Maximum pulse width in microsecond
 #define SERVO_MAX_DEGREE        (180)   // Maximum angle in degree upto which servo can rotate
 #define SERVO_PULSE_GPIO        (26)   // GPIO connects to the PWM signal line
 
+// BUTTON DEFINITION
 #define BTN_GPIO 34
-#define START_BTN_GPIO 39
-
-//#define FEEDER_START (0)
 
 // 14-Segment Display
 #define SLAVE_ADDR                         0x70 // alphanumeric address
@@ -51,143 +51,7 @@
 #define ACK_VAL                            0x00 // i2c ack value
 #define NACK_VAL                           0xFF // i2c nack value
 
-static const uint16_t alphafonttable[] =  {
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000,
-	0b0000000000000000, //  
-	0b0100000000000110, // !
-	0b0000001000100000, // "
-	0b0001001011001110, // #
-	0b0001001011101101, // $
-	0b0010110111100100, // %
-	0b0010001101011101, // &
-	0b0000010000000000, // '
-	0b0010010000000000, // (
-	0b0000100100000000, // )
-	0b0011111111000000, // *
-	0b0001001011000000, // +
-	0b0000100000000000, // ,
-	0b0000000011000000, // -
-	0b0100000000000000, // .
-	0b0000110000000000, // /
-	0b0000110000111111, // 0
-	0b0000000000000110, // 1
-	0b0000000011011011, // 2
-	0b0000000010001111, // 3
-	0b0000000011100110, // 4
-	0b0010000001101001, // 5
-	0b0000000011111101, // 6
-	0b0000000000000111, // 7
-	0b0000000011111111, // 8
-	0b0000000011101111, // 9
-	0b0001001000000000, // :
-	0b0000101000000000, // ;
-	0b0010010000000000, // <
-	0b0000000011001000, // =
-	0b0000100100000000, // >
-	0b0001000010000011, // ?
-	0b0010000010110111, // @
-	0b0000000011110111, // A
-	0b0001001010001111, // B
-	0b0000000000111001, // C
-	0b0001001000001111, // D
-	0b0000000011111001, // E
-	0b0000000001110001, // F
-	0b0000000010111101, // G
-	0b0000000011110110, // H
-	0b0001001000000000, // I
-	0b0000000000011110, // J
-	0b0010010001110000, // K
-	0b0000000000111000, // L
-	0b0000010100110110, // M
-	0b0010000100110110, // N
-	0b0000000000111111, // O
-	0b0000000011110011, // P
-	0b0010000000111111, // Q
-	0b0010000011110011, // R
-	0b0000000011101101, // S
-	0b0001001000000001, // T
-	0b0000000000111110, // U
-	0b0000110000110000, // V
-	0b0010100000110110, // W
-	0b0010110100000000, // X
-	0b0001010100000000, // Y
-	0b0000110000001001, // Z
-	0b0000000000111001, // [
-	0b0010000100000000, // 
-	0b0000000000001111, // ]
-	0b0000010000000010, // ^
-	0b0000000000001000, // _
-	0b0000000100000000, // `
-	0b0010000001011000, // a
-	0b0010000001111000, // b
-	0b0000000011011000, // c
-	0b0000100010001110, // d
-	0b0000100001011000, // e
-	0b0000000001110001, // f
-	0b0000010010001110, // g
-	0b0001000001110000, // h
-	0b0001000000000000, // i
-	0b0000000000001110, // j
-	0b0011011000000000, // k
-	0b0000000000110000, // l
-	0b0001000011010100, // m
-	0b0001000001010000, // n
-	0b0000000011011100, // o
-	0b0000000101110000, // p
-	0b0000010010000110, // q
-	0b0000000001010000, // r
-	0b0010000010001000, // s
-	0b0000000001111000, // t
-	0b0000000000011100, // u
-	0b0010000000000100, // v
-	0b0010100000010100, // w
-	0b0010100011000000, // x
-	0b0010000000001100, // y
-	0b0000100001001000, // z
-	0b0000100101001001, // {
-	0b0001001000000000, // |
-	0b0010010010001001, // }
-	0b0000010100100000, // ~
-	0b0011111111111111,
-};
-
-// 0 = never pushed, 1 = first push, 2 = any consecutive pushes
-
 int timer_count; 
-
-int btn_mode = 0;
-
 int time_arr[3];
 
 // A simple structure to pass "events" to main task
@@ -198,12 +62,14 @@ typedef struct {
 // Initialize queue handler for timer-based events
 xQueueHandle timer_queue;
 
+
+// SERVO FUNCTIONS
 static inline uint32_t example_convert_servo_angle_to_duty_us(int angle)
 {
     return (angle + SERVO_MAX_DEGREE) * (SERVO_MAX_PULSEWIDTH_US - SERVO_MIN_PULSEWIDTH_US) / (2 * SERVO_MAX_DEGREE) + SERVO_MIN_PULSEWIDTH_US;
 }
 
-static int servo(void) {
+static void servo(void) {
     mcpwm_gpio_init(MCPWM_UNIT_0, MCPWM0A, SERVO_PULSE_GPIO); // To drive a RC servo, one MCPWM generator is enough
 
     mcpwm_config_t pwm_config = {
@@ -220,119 +86,10 @@ static int servo(void) {
             vTaskDelay(pdMS_TO_TICKS(2000)); //Add delay, since it takes time for servo to rotate, generally 100ms/60degree rotation under 5V power supply
         }
     }
-    return 1;
 }
 
-// ISR handler
-void IRAM_ATTR timer_group0_isr(void *para) {
 
-    // Prepare basic event data, aka set flag
-    timer_event_t evt;
-    evt.flag = 1;
-
-    // Clear the interrupt, Timer 0 in group 0
-    TIMERG0.int_clr_timers.t0 = 1;
-
-    // After the alarm triggers, we need to re-enable it to trigger it next time
-    TIMERG0.hw_timer[TIMER_0].config.alarm_en = TIMER_ALARM_EN;
-
-    // Send the event data back to the main program task
-    xQueueSendFromISR(timer_queue, &evt, NULL);
-}
-
-// Initialize timer 0 in group 0 for 1 sec alarm interval and auto reload
-static void alarm_init() {
-    /* Select and initialize basic parameters of the timer */
-    timer_config_t config;
-    config.divider = TIMER_DIVIDER;
-    config.counter_dir = TIMER_COUNT_UP;
-    config.counter_en = TIMER_PAUSE;
-    config.alarm_en = TIMER_ALARM_EN;
-    config.intr_type = TIMER_INTR_LEVEL;
-    config.auto_reload = TEST_WITH_RELOAD;
-    timer_init(TIMER_GROUP_0, TIMER_0, &config);
-
-    // Timer's counter will initially start from value below
-    timer_set_counter_value(TIMER_GROUP_0, TIMER_0, 0x00000000ULL);
-
-    // Configure the alarm value and the interrupt on alarm
-    timer_set_alarm_value(TIMER_GROUP_0, TIMER_0, TIMER_INTERVAL_SEC * TIMER_SCALE);
-    timer_enable_intr(TIMER_GROUP_0, TIMER_0);
-    timer_isr_register(TIMER_GROUP_0, TIMER_0, timer_group0_isr,
-        (void *) TIMER_0, ESP_INTR_FLAG_IRAM, NULL);
-
-    // Start timer
-    timer_start(TIMER_GROUP_0, TIMER_0);
-}
-
-static void time_conversion(int sec, int time_arr[]) {
-    int h, m, s;
-
-    h = sec/3600;
-    m = (sec -(3600*h))/60;
-    s = (sec -(3600*h)-(m*60));
-
-    time_arr[0] = h;
-    time_arr[1] = m;
-    time_arr[2] = s;
-}
-
-static int time_conversion2(int time_arr[]) {
-    int sec = 0;
-    sec = (time_arr[0] * 3600) + (time_arr[1] * 60) + time_arr[2];
-    return sec;
-}
-
-static void button_init() {
-    gpio_pad_select_gpio(BTN_GPIO);
-    gpio_set_direction(BTN_GPIO, GPIO_MODE_INPUT);
-}
-
-static void button_input() {
-    while(1) {
-        int button_press = gpio_get_level(BTN_GPIO);
-
-        if (button_press) {
-            time_arr[0]++;
-            btn_mode = 1;
-            vTaskDelay(500 / portTICK_RATE_MS);
-        }
-    }
-}
-
-// The main task of this example program
-static void timer_evt_task(void *arg) {
-
-
-
-
-        while (1) { 
-
-            // Create dummy structure to store structure from queue
-            timer_event_t evt;
-
-            // Transfer from queue
-            xQueueReceive(timer_queue, &evt, portMAX_DELAY);
-
-            // Do something if triggered!
-            if (evt.flag == 1) {
-                if(time_arr[0] > 99)
-                    time_arr[0] = 0;
-                time_conversion(timer_count, time_arr);
-                //timer_count = time_conversion2(time_arr);
-                printf("%02d:%02d:%02d\n", time_arr[0], time_arr[1], time_arr[2]);
-                timer_count--;
-                if (timer_count == -1) {
-                    // reset, send signal to servo
-                    servo();
-                    printf("FISH FED\n");
-                    timer_count = time_conversion2(time_arr)+10;
-                }
-            }
-            vTaskDelay(10);
-        }
-}
-
+// ALPHANUMERIC FUNCTIONS
 // Function to initiate i2c -- note the MSB declaration!
 static void i2c_example_master_init(){
     // Debug
@@ -521,8 +278,116 @@ static void test_alpha_display() {
 }
 
 
-void app_main(void) {
+// BUTTON FUNCTIONS
+static void button_init() {
+    gpio_pad_select_gpio(BTN_GPIO);
+    gpio_set_direction(BTN_GPIO, GPIO_MODE_INPUT);
+}
 
+static void button_input() {
+    while(1) {
+        int button_press = gpio_get_level(BTN_GPIO);
+
+        if (button_press) {
+            time_arr[0]++;
+            btn_mode = 1;
+            vTaskDelay(500 / portTICK_RATE_MS);
+        }
+    }
+}
+
+
+// TIMER FUNCTIONS
+// ISR handler
+void IRAM_ATTR timer_group0_isr(void *para) {
+
+    // Prepare basic event data, aka set flag
+    timer_event_t evt;
+    evt.flag = 1;
+
+    // Clear the interrupt, Timer 0 in group 0
+    TIMERG0.int_clr_timers.t0 = 1;
+
+    // After the alarm triggers, we need to re-enable it to trigger it next time
+    TIMERG0.hw_timer[TIMER_0].config.alarm_en = TIMER_ALARM_EN;
+
+    // Send the event data back to the main program task
+    xQueueSendFromISR(timer_queue, &evt, NULL);
+}
+
+// Initialize timer 0 in group 0 for 1 sec alarm interval and auto reload
+static void alarm_init() {
+    /* Select and initialize basic parameters of the timer */
+    timer_config_t config;
+    config.divider = TIMER_DIVIDER;
+    config.counter_dir = TIMER_COUNT_UP;
+    config.counter_en = TIMER_PAUSE;
+    config.alarm_en = TIMER_ALARM_EN;
+    config.intr_type = TIMER_INTR_LEVEL;
+    config.auto_reload = TEST_WITH_RELOAD;
+    timer_init(TIMER_GROUP_0, TIMER_0, &config);
+
+    // Timer's counter will initially start from value below
+    timer_set_counter_value(TIMER_GROUP_0, TIMER_0, 0x00000000ULL);
+
+    // Configure the alarm value and the interrupt on alarm
+    timer_set_alarm_value(TIMER_GROUP_0, TIMER_0, TIMER_INTERVAL_SEC * TIMER_SCALE);
+    timer_enable_intr(TIMER_GROUP_0, TIMER_0);
+    timer_isr_register(TIMER_GROUP_0, TIMER_0, timer_group0_isr,
+        (void *) TIMER_0, ESP_INTR_FLAG_IRAM, NULL);
+
+    // Start timer
+    timer_start(TIMER_GROUP_0, TIMER_0);
+}
+
+static void time_conversion(int sec, int time_arr[]) {
+    int h, m, s;
+
+    h = sec/3600;
+    m = (sec -(3600*h))/60;
+    s = (sec -(3600*h)-(m*60));
+
+    time_arr[0] = h;
+    time_arr[1] = m;
+    time_arr[2] = s;
+}
+
+static int time_conversion2(int time_arr[]) {
+    int sec = 0;
+    sec = (time_arr[0] * 3600) + (time_arr[1] * 60) + time_arr[2];
+    return sec;
+}
+
+static void timer_evt_task(void *arg) {
+	while (1) { 
+	    // Create dummy structure to store structure from queue
+	    timer_event_t evt;
+
+	    // Transfer from queue
+	    xQueueReceive(timer_queue, &evt, portMAX_DELAY);
+
+	    // Do something if triggered!
+	    if (evt.flag == 1) {
+		if(time_arr[0] > 99)
+		    time_arr[0] = 0;
+		time_conversion(timer_count, time_arr);
+		//timer_count = time_conversion2(time_arr);
+		printf("%02d:%02d:%02d\n", time_arr[0], time_arr[1], time_arr[2]);
+		timer_count--;
+		if (timer_count == -1) {
+		    // reset, send signal to servo
+		    servo();
+		    printf("FISH FED\n");
+		    timer_count = time_conversion2(time_arr)+10;
+		}
+	    }
+	    vTaskDelay(10);
+	}
+}
+
+
+// MAIN FUNCTION
+void app_main(void) {
     ESP_ERROR_CHECK( uart_driver_install(UART_NUM_0,
       256, 0, 0, NULL, 0) );
 
@@ -541,7 +406,4 @@ void app_main(void) {
     xTaskCreate(timer_evt_task, "timer_evt_task", 4096, NULL, configMAX_PRIORITIES, NULL); 
     xTaskCreate(test_alpha_display,"test_alpha_display", 4096, NULL, configMAX_PRIORITIES-1, NULL);
     xTaskCreate(button_input,"button_input", 4096, NULL, tskIDLE_PRIORITY, NULL);
-
-
-    // Initiate alarm using timer API
 }
