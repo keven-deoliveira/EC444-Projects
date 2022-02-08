@@ -66,6 +66,11 @@ Used Modules:
 
 
 ## References
+- https://github.com/BU-EC444/bu-ec444-whizzer/blob/Spring-2022/skills/timer.md
+- https://github.com/BU-EC444/bu-ec444-whizzer/blob/Spring-2022/briefs/design-patterns/dp-timer.md
+- https://github.com/BU-EC444/bu-ec444-whizzer/blob/Spring-2022/skills/rtos.md
+- https://github.com/BU-EC444/code-examples/tree/master/i2c-display
+- https://github.com/espressif/esp-idf/tree/master/examples/peripherals/mcpwm/mcpwm_servo_control
 
 -----
 
