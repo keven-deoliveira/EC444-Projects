@@ -1,5 +1,7 @@
 # Code Readme
 
+The code folder in this quest can be divided up in to two code files, as described below.
+
 ### timer.c 
 
 The main program that drives the system.
