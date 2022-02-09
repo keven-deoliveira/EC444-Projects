@@ -37,7 +37,7 @@ Date: 2022-02-08
 
 
 ## Sketches and Photos
-<center><img src="./images/Fish Feeder Circuit.jpg" width="25%" /></center>  
+<center><img src="./images/Fish Feeder Circuit1.jpg" width="25%" /></center>  
 <center> </center>
 
 
