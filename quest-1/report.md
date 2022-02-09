@@ -10,7 +10,7 @@ The goal of Quest one was to create a "fish feeder" from the skills we have lear
 
 We used what we learned in skill07 and set GPIO input and output pins to set up the button that allows the user to set up the hour for each interval. We used what we learned in skill08 to help set up the  display using Adafruit 14-segment Alphanumeric Display. We also used what we learned in skill09 to set up the servo to spin right and left three times. 
 
-To understand the code in more detail, please go to [CODE README](https://link-url-here.org) in the code folder for more information. 
+To understand the code in more detail, please go to [CODE README](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Amado/blob/master/quest-1/code/README.md) in the code folder for more information. 
 
 ## Self-Assessment
 
@@ -52,7 +52,10 @@ Fixing this first problem then introduced more issues, where tasks were being st
 <center><img src="./images/Fish Feeder Circuit1.jpg" width="25%" /></center>  
 <center> </center>
 
-![alt text](https://github.com/BU-EC444/Jung-Homoon/blob/master/skills/cluster-0/02/images/skill02.png?raw=true)
+<center><img src="./images/Fish Feeder Circuit2.jpg" width="25%" /></center>  
+<center> </center>
+
+![alt text](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Amado/blob/master/quest-1/images/quest1team13.png?raw=true)
 
 ## Supporting Artifacts
 - [Press here to watch our video of the project!](https://drive.google.com/file/d/1Z3l409PpMPkjmaKKFfOX0v_C60dNzloV/view?usp=sharing)
