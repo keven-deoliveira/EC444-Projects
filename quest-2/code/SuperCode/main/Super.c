@@ -148,11 +148,10 @@ void app_main(void)
 
         // Ultrasonic Sensor
         // printf("Raw: %d\tVoltage: %dmV\n", adc_reading, voltage);
-        printf("Temperature: %f°C\n", Tc);
-        printf("IR Distance: %fcm\n", A);
-        printf("Ultrasound:  %dcm\n", range);
+        printf("%f,", Tc);
+        printf("%d,", range);
+        printf("%f\n", A);
 
-        printf("---------------------------\n");
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
