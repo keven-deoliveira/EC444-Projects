@@ -11,7 +11,7 @@ app.get('/', (req,res) => {
 })
 
 function hello(arg) {
-    console.log(arg)
+    // console.log(arg)
     pureData = arg.split("\r")[0]
     splitData = pureData.split(",")
     dataStream = [Number(splitData[0]),Number(splitData[1]),Number(splitData[2])]
@@ -22,14 +22,12 @@ function hello(arg) {
         app.emit('dataEvent');
         res.send(dataStream)
     })
-
-    console.log("asdf")
     console.log(dataStream)
 }
 
 
 const port = new SerialPort({
-    path:'COM3', 
+    path:'COM5', 
     baudRate: 115200,
 });
 
