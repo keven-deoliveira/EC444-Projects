@@ -14,7 +14,7 @@ function hello(arg) {
     console.log(arg)
     pureData = arg.split("\r")[0]
     splitData = pureData.split(",")
-    dataStream = [Number(splitData[0]),Number(splitData[1]),111]
+    dataStream = [Number(splitData[0]),Number(splitData[1]),Number(splitData[2])]
     // dataStream.push(pureData.split(","))
     // console.log(dataStream)
 
