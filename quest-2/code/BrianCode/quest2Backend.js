@@ -1,6 +1,5 @@
 var app = require('express')();
 var http = require("http").Server(app);
-const io = require("socket.io");
 
 const { SerialPort, ReadlineParser  } = require("serialport");
 
@@ -29,7 +28,7 @@ function hello(arg) {
 
 
 const port = new SerialPort({
-    path:'COM3', 
+    path:'/dev/cu.usbserial-019FD4C', 
     baudRate: 115200,
 });
 

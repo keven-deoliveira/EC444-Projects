@@ -43,7 +43,7 @@ Date: 2022-2-23
 
 
 ## Supporting Artifacts
-- [Link to video demo](). Not to exceed 120s
+- [https://drive.google.com/file/d/1hqpNLqbCA_BrbYPr6pWUm23zb65npKQJ/view?usp=sharing](). Not to exceed 120s
 
 
 ## Modules, Tools, Source Used Including Attribution
