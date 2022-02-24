@@ -14,6 +14,7 @@
             axisX: {
                 crosshair: {
                     enabled: true,
+                    xValueType: "dateTime",
                     valueFormatString: "HH:mm:ss"
                 }
             },
@@ -31,14 +32,14 @@
                 shared: true
             },
             title: {
-                text: "Tactile Internet"
+                text: "Dynamic Data"
             },
             data: [
                 {
                     type: "line",
                     showInLegend: true,
                     color: "#696969",
-                    name: "Thermistor (*C)",
+                    name: "Thermistor",
                     xValueFormatString: "HH:mm:ss",
                     xValueType: "dateTime",
                     dataPoints: therm
@@ -47,7 +48,7 @@
                     type: "line",
                     showInLegend: true,
                     color: "#EDC420",
-                    name: "Ultrasonic (cm)",
+                    name: "Ultrasonic",
                     xValueFormatString: "HH:mm:ss",
                     xValueType: "dateTime",
                     dataPoints: ultra
@@ -56,7 +57,7 @@
                     type: "line",
                     showInLegend: true,
                     color: "green",
-                    name: "IR (cm)",
+                    name: "IR",
                     xValueFormatString: "HH:mm:ss",
                     xValueType: "dateTime",
                     dataPoints: ir
@@ -70,22 +71,23 @@
         var dataLength = 10; // number of dataPoints visible at any point
         var counter = 0
 
+        var intervalId = window.setInterval(function(){
             $.get('/data', function (data) {
                 console.log(data[0] + " " + data[1] + " " + data[2])
                 var updateChart = function (count) {
+                    xVal += updateInterval;
                     therm.push({
-                        x: xVal*(100/60),
+                        x: xVal,
                         y: data[0]
                     })
                     ultra.push({
-                        x: xVal*(100/60),
+                        x: xVal,
                         y: data[1]
                     })
                     ir.push({
-                        x: xVal*(100/60),
+                        x: xVal,
                         y: data[2]
                     })
-                        xVal += updateInterval;
                     if (therm.length > dataLength) {
                         therm.shift();
                         ultra.shift();
@@ -94,9 +96,8 @@
                     chart.render();
                 };
                 updateChart(counter);
-                setInterval(function(){updateChart()}, updateInterval);
             })
-
+        }, 1000);
 
     }
 </script>

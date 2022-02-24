@@ -17,7 +17,7 @@ function hello(arg) {
     splitData = pureData.split(",")
     dataStream = [Number(splitData[0]),Number(splitData[1]),Number(splitData[2])]
 
-    fs.appendFile('log.txt', `\n${dataStream[0]} , ${dataStream[1]} , ${dataStream[2]}`, function (err) {
+    fs.appendFile('log.txt', `\n${Date()} , ${dataStream[0]} , ${dataStream[1]} , ${dataStream[2]}`, function (err) {
         if (err) return console.log(err);
         console.log('Logged data: ', dataStream);
     });
