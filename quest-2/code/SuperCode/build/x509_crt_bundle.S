@@ -1,4 +1,4 @@
-/* * Data converted from /Users/computer-wizz/esp/Quest2/SuperCode/build/esp-idf/mbedtls/x509_crt_bundle
+/* * Data converted from C:/Users/bribr/OneDrive/Desktop/School/EC444/esp-idf/SuperCode/build/esp-idf/mbedtls/x509_crt_bundle
  */
 .data
 .section .rodata.embedded

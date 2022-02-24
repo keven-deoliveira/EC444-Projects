@@ -31,14 +31,14 @@
                 shared: true
             },
             title: {
-                text: "Dynamic Data"
+                text: "Tactile Internet"
             },
             data: [
                 {
                     type: "line",
                     showInLegend: true,
                     color: "#696969",
-                    name: "Thermistor",
+                    name: "Thermistor (*C)",
                     xValueFormatString: "HH:mm:ss",
                     xValueType: "dateTime",
                     dataPoints: therm
@@ -47,7 +47,7 @@
                     type: "line",
                     showInLegend: true,
                     color: "#EDC420",
-                    name: "Ultrasonic",
+                    name: "Ultrasonic (cm)",
                     xValueFormatString: "HH:mm:ss",
                     xValueType: "dateTime",
                     dataPoints: ultra
@@ -56,7 +56,7 @@
                     type: "line",
                     showInLegend: true,
                     color: "green",
-                    name: "IR",
+                    name: "IR (cm)",
                     xValueFormatString: "HH:mm:ss",
                     xValueType: "dateTime",
                     dataPoints: ir
@@ -70,20 +70,19 @@
         var dataLength = 10; // number of dataPoints visible at any point
         var counter = 0
 
-        var intervalId = window.setInterval(function(){
             $.get('/data', function (data) {
                 console.log(data[0] + " " + data[1] + " " + data[2])
                 var updateChart = function (count) {
                     therm.push({
-                        x: xVal,
+                        x: xVal*(100/60),
                         y: data[0]
                     })
                     ultra.push({
-                        x: xVal,
+                        x: xVal*(100/60),
                         y: data[1]
                     })
                     ir.push({
-                        x: xVal,
+                        x: xVal*(100/60),
                         y: data[2]
                     })
                         xVal += updateInterval;
@@ -95,8 +94,9 @@
                     chart.render();
                 };
                 updateChart(counter);
+                setInterval(function(){updateChart()}, updateInterval);
             })
-        }, 1000);
+
 
     }
 </script>

@@ -20,8 +20,11 @@
    to simple macros with numeric values, and/or #if/#endif blocks.
 */
 /*
+
  * Automatically generated file. DO NOT EDIT.
+
  * Espressif IoT Development Framework (ESP-IDF) Configuration Header
+
  */
        
 /* List of deprecated options */
@@ -70,14 +73,15 @@ MEMORY
   /* (See iram0_2_seg for meaning of 0x20 offset in the above.) */
   /* RTC fast memory (executable). Persists over deep sleep.
    */
-  rtc_iram_seg(RWX) : org = 0x400C0000, len = 0x2000 - 0
+  rtc_iram_seg(RWX) : org = 0x400C0000, len = 0x2000
   /* RTC fast memory (same block as above), viewed from data bus */
   rtc_data_seg(RW) : org = 0x3ff80000, len = 0x2000 - 0
   /* RTC slow memory (data accessible). Persists over deep sleep.
 
      Start of RTC slow memory is reserved for ULP co-processor code + data, if enabled.
   */
-  rtc_slow_seg(RW) : org = 0x50000000, len = 0x2000
+  rtc_slow_seg(RW) : org = 0x50000000 + 0,
+                                     len = 0x2000 - 0
   /* external memory */
   extern_ram_seg(RWX) : org = 0x3F800000,
                                      len = 0x400000
