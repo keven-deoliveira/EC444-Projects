@@ -17,6 +17,8 @@ Contains the JavaScript code that receives information from serialport, parses i
 
 IDF program that drives the thermistor, ultrasonic, and IR sensors. Developed by Ayrton.
 
+This code is a heavily modified version of the standard adc. It duplicates channels and characteristics and the equations used to find the Vout of each sensor. After the additions made to allow readings from multiple esp32 pins at once all the equations used in the skills for the sensors were added to code so they could each break down their own voltage calculations into measurable Engineering units.
+
 #### Resources:
 - https://canvasjs.com/javascript-charts/line-chart-axis-scale-breaks/
 - https://canvasjs.com/html5-javascript-dynamic-chart/
