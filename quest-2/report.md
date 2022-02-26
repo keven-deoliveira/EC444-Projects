@@ -51,11 +51,7 @@ This project makes us use all the skills we learning in cluster02 and some from 
 
 ![Circuit 1](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic1.jpg)
 
-![Circuit 2](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic2.jpg)
-
 ![Circuit 3](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic3.jpg)
-
-![Circuit 4](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic4.jpg)
 
 ## Supporting Artifacts
 
