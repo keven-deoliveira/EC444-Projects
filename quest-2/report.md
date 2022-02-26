@@ -14,13 +14,15 @@ Date: 2022-2-23
 
 | Objective Criterion | Rating | Max Value  | 
 |---------------------------------------------|:-----------:|:---------:|
-| Objective One |  |  1     | 
-| Objective Two |  |  1     | 
-| Objective Three |  |  1     | 
-| Objective Four |  |  1     | 
-| Objective Five |  |  1     | 
-| Objective Six |  |  1     | 
-| Objective Seven |  |  1     | 
+| Periodic reporting of ultrasonic range in m | 1 |  1     | 
+| Periodic reporting of IR range in m |  1  |  1     | 
+| Periodic reporting of temperature in C | 1 |  1     | 
+| Results displayed at host as text |  1  |  1     | 
+| Results graphed at host continously based on reporting period |  1  |  1     | 
+| Demo delivered at scheduled time and report submitted in team folder with all required components | 1  |  1     | 
+| Investigative question response | 1 |  1     | 
+
+| Total objective criteria | 7 |  7     | 
 
 
 ### Qualitative Criteria
