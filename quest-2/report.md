@@ -5,7 +5,10 @@ Date: 2022-2-23
 -----
 
 ## Summary
+This project is called Tactile Internet. 
+The goal of this Quest was to create a "Tactile Internet" from the skills we have learned in cluster02. The objective includes having to read the values from all three ultrasonic sensor, thermistor, and the IR sensor. Once we are able to get data from these sensors to ESP32, we then display the values on the console as text. Then we save this console data to a file on our host as a txt. Finally we plot the data we are getting.
 
+This project makes us use all the skills we learning in cluster02 and some from cluster01 such as setting GPIO input pins. We use skills 13,14,15 to connect all three sensors and just changing the input pins with the GPIO settings. Then we use node.js we learned from skill 16 to do all the backend parsing and processing. Finally we use skill 17 and canvas.js to display the incoming data in a live dynamic chart!
 
 ## Self-Assessment
 
