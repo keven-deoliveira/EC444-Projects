@@ -62,7 +62,15 @@ pic4: https://drive.google.com/file/d/1iIwnmfJhp1HGBAkeNj1KjVw-jh4hRttu/view?usp
 
 ## Modules, Tools, Source Used Including Attribution
 
+- ADC Pins
+- NodeJS
+- SerialPort
+- CanvasJS
+
 ## References
+
+- https://canvasjs.com/javascript-charts/line-chart-axis-scale-breaks/
+- https://canvasjs.com/html5-javascript-dynamic-chart/
 
 -----
 
