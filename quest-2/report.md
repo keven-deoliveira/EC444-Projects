@@ -45,9 +45,14 @@ This project makes us use all the skills we learning in cluster02 and some from 
 
 ## Solution Design
 
+Our solution is real time, accurate and dynamic. The chart updates every second with the newest data from all three sensors that also refresh every second. The graph shows the exact time the data was collected. On top of that, we made the code write to a log.txt file that also saves the timestamp and the data from all three sensors. Finally, to make our chart even easier to understand, we added a break in the middle so the distnace in m (usually fairly small) is zoomed in (scaled) and then we see the temperature in celsius that is relatively higher (~20). Please watch our video and read our code README!
+
+Tabulate and compare the accuracy and speed of the IR and ultrasonic sensors. Which one would you prefer to use to support driving a robotic car?
+It seems like IR sensor tends to fluctuate a lot more. We would prefer to use a ultrasonic sensor to support driving a robotic car. This makes sense because IR sensor uses reflected light can be relatively unreliable due to interfernce from other IR lights (for example sunlight). Ultrasonic sensors work using sound waves and its not affected by as many factors as the IR sensor.
 
 
 ## Sketches and Photos
+![canvasjsQuest](https://user-images.githubusercontent.com/65934595/155830100-2183ba7a-5308-4093-adf1-b544c0c099b8.png)
 
 ![Circuit 1](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic1.jpg)
 
