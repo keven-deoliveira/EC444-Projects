@@ -1,5 +1,5 @@
 # Quest Tactile Internet
-Authors: Ayrton Reulet, Brian Jung, Kevin DeOliveira
+Authors: Ayrton Reulet, Brian Jung, Keven DeOliveira
 
 Date: 2022-2-23
 -----
