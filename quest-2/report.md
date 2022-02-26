@@ -22,6 +22,8 @@ Date: 2022-2-23
 | Demo delivered at scheduled time and report submitted in team folder with all required components | 1  |  1     | 
 | Investigative question response | 1 |  1     | 
 
+| Objective Criterion | Rating | Max Value  | 
+|---------------------------------------------|:-----------:|:---------:|
 | Total objective criteria | 7 |  7     | 
 
 
@@ -29,11 +31,14 @@ Date: 2022-2-23
 
 | Qualitative Criterion | Rating | Max Value  | 
 |---------------------------------------------|:-----------:|:---------:|
-| Quality of solution |  |  5     | 
-| Quality of report.md including use of graphics |  |  3     | 
-| Quality of code reporting |  |  3     | 
-| Quality of video presentation |  |  3     | 
+| Quality of solution | 5 |  5     | 
+| Quality of report.md including use of graphics | 3 |  3     | 
+| Quality of code reporting | 3 |  3     | 
+| Quality of video presentation | 3 |  3     | 
 
+| Qualitative Criterion | Rating | Max Value  | 
+|---------------------------------------------|:-----------:|:---------:|
+| Total qualitative criteria | 14 |  14    | 
 
 ## Solution Design
 
