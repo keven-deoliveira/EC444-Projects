@@ -48,17 +48,18 @@ This project makes us use all the skills we learning in cluster02 and some from 
 
 
 ## Sketches and Photos
-<center><img src="./images/ece444.png" width="25%" /></center>  
-<center> </center>
 
+![Circuit 1](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic1.jpg)
+
+![Circuit 2](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic2.jpg)
+
+![Circuit 3](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic3.jpg)
+
+![Circuit 4](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-2/images/quest2%20pic4.jpg)
 
 ## Supporting Artifacts
-- [https://drive.google.com/file/d/1hqpNLqbCA_BrbYPr6pWUm23zb65npKQJ/view?usp=sharing](). Not to exceed 120s
-pic1: https://drive.google.com/file/d/1hzoYj51wa3TGl4lYiF636dwr1OC2k5vl/view?usp=sharing
-pic2: https://drive.google.com/file/d/1i6jD88pXWCBjXUBeGG1orD-FIpmFAg7n/view?usp=sharing
-pic3: https://drive.google.com/file/d/1i9XVEDK5GtSNcABogPHqJKw2mombZIXz/view?usp=sharing
-pic4: https://drive.google.com/file/d/1iIwnmfJhp1HGBAkeNj1KjVw-jh4hRttu/view?usp=sharing
 
+[LINK TO VIDEO](https://drive.google.com/file/d/1hqpNLqbCA_BrbYPr6pWUm23zb65npKQJ/view?usp=sharing)
 
 ## Modules, Tools, Source Used Including Attribution
 
