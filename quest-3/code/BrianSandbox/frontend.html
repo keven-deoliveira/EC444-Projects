@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Hurricane Box</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script> 
+            function toggle(button) {
+                text = '/api?q='
+                if (button.value == "OFF") {
+                  button.value = "ON";
+                  button.style = "color: blue"
+                  fetch(text.concat("ON"))
+                } 
+                else if (button.value == "ON"){
+                  button.value = "OFF";
+                  button.style = "color: red"
+                  fetch(text.concat("OFF"))
+                }
+            } 
+        </script>
+        <!-- <script>
+            var intervalId = window.setInterval(function(){
+                $.get('/data', function (data) {console.log(data)})
+
+                document.getElementById("batlvl").innerHTML = "New text!";
+            }, 1000);
+        </script> -->
+        <script>
+            window.onload= function () {
+                var currentDate = new Date()
+                var accx = [];
+                var accy = [];
+                var accz = [];
+                var accr = [];
+                var accp = [];
+                var tempr = [];
+                var chart = new CanvasJS.Chart("chartContainer1", {
+                    axisX: {
+                        crosshair: {
+                            enabled: true,
+                            xValueType: "dateTime",
+                            valueFormatString: "HH:mm:ss"
+                        }
+                    },
+                    axisY: {
+                        title: "Data",
+                        stripLines: [{
+                            showOnTop: true,
+                            lineDashType: "dash",
+                            color: "#ff4949",
+                            labelFontColor: "#ff4949",
+                            labelFontSize: 14
+                        }]
+                    },
+                    toolTip: {
+                        shared: true
+                    },
+                    title: {
+                        text: "Accelerometer X,Y,Z"
+                    },
+                    data: [
+                        {
+                            type: "line",
+                            showInLegend: true,
+                            color: "#696969",
+                            name: "Accelerometer X (m/s2)",
+                            xValueFormatString: "HH:mm:ss",
+                            xValueType: "dateTime",
+                            dataPoints: accx
+                        },
+                        {
+                            type: "line",
+                            showInLegend: true,
+                            color: "#EDC420",
+                            name: "Accelerometer Y (m/s2)",
+                            xValueFormatString: "HH:mm:ss",
+                            xValueType: "dateTime",
+                            dataPoints: accy
+                        },
+                        {
+                            type: "line",
+                            showInLegend: true,
+                            color: "green",
+                            name: "Accelerometer Z (m/s2)",
+                            xValueFormatString: "HH:mm:ss",
+                            xValueType: "dateTime",
+                            dataPoints: accz
+                        },
+        
+                    ]
+                });
+                var chart2 = new CanvasJS.Chart("chartContainer2", {
+                    axisX: {
+                        crosshair: {
+                            enabled: true,
+                            xValueType: "dateTime",
+                            valueFormatString: "HH:mm:ss"
+                        }
+                    },
+                    axisY: {
+                        title: "Data",
+                        stripLines: [{
+                            showOnTop: true,
+                            lineDashType: "dash",
+                            color: "#ff4949",
+                            labelFontColor: "#ff4949",
+                            labelFontSize: 14
+                        }]
+                    },
+                    toolTip: {
+                        shared: true
+                    },
+                    title: {
+                        text: "Accelerometer Roll and Pitch"
+                    },
+                    data: [
+                        {
+                            type: "line",
+                            showInLegend: true,
+                            color: "#696969",
+                            name: "Accelerometer Roll (angle)",
+                            xValueFormatString: "HH:mm:ss",
+                            xValueType: "dateTime",
+                            dataPoints: accr
+                        },
+                        {
+                            type: "line",
+                            showInLegend: true,
+                            color: "#EDC420",
+                            name: "Accelerometer Pitch (angle)",
+                            xValueFormatString: "HH:mm:ss",
+                            xValueType: "dateTime",
+                            dataPoints: accp
+                        },
+                    ]
+                });
+                var chart3 = new CanvasJS.Chart("chartContainer3", {
+                    axisX: {
+                        crosshair: {
+                            enabled: true,
+                            xValueType: "dateTime",
+                            valueFormatString: "HH:mm:ss"
+                        }
+                    },
+                    axisY: {
+                        title: "Data",
+                        stripLines: [{
+                            showOnTop: true,
+                            lineDashType: "dash",
+                            color: "#ff4949",
+                            labelFontColor: "#ff4949",
+                            labelFontSize: 14
+                        }]
+                    },
+                    toolTip: {
+                        shared: true
+                    },
+                    title: {
+                        text: "Temperature"
+                    },
+                    data: [
+                        {
+                            type: "line",
+                            showInLegend: true,
+                            color: "#696969",
+                            name: "Temperature (C)",
+                            xValueFormatString: "HH:mm:ss",
+                            xValueType: "dateTime",
+                            dataPoints: tempr
+                        },
+                    ]
+                });
+
+                var xVal = currentDate.getTime();// - (700 * 1000);
+                var updateInterval = 1000;
+                var dataLength = 10; // number of dataPoints visible at any point
+                var counter = 0
+        
+                var intervalId = window.setInterval(function(){
+                    $.get('/data', function (data) {
+                        var updateChart = function (count) {
+                            xVal += 2000//updateInterval;
+                            accx.push({
+                                x: xVal,//*(100/60),
+                                y: data[0]
+                            })
+                            accy.push({
+                                x: xVal,//*(100/60),
+                                y: data[1]
+                            })
+                            accz.push({
+                                x: xVal,//*(100/60),
+                                y: data[2]
+                            })
+                            accr.push({
+                                x: xVal,//*(100/60),
+                                y: data[3]
+                            })
+                            accp.push({
+                                x: xVal,//*(100/60),
+                                y: data[4]
+                            })
+                            tempr.push({
+                                x: xVal,//*(100/60),
+                                y: data[5]
+                            })
+                            if (accx.length > dataLength) {
+                                accx.shift();
+                                accy.shift();
+                                accz.shift();
+                                accr.shift();
+                                accp.shift();
+                                tempr.shift();
+                            }
+                            chart.render();
+                            chart2.render();
+                            chart3.render();
+                            document.getElementById("batlvl").innerHTML = data[6];
+                        };
+                        updateChart(counter);
+                    })
+                }, 1000);
+        
+            }
+        </script>
+    </head>
+
+    <body>
+        <img src="http://team13.ddns.net:8000/stream.mjpg"></img>
+        <div id="chartContainer1" style="width: 45%; height: 300px;display: inline-block;"></div> 
+        <div id="chartContainer2" style="width: 45%; height: 300px;display: inline-block;"></div><br/>
+        <div id="chartContainer3" style="width: 45%; height: 300px;display: inline-block;"></div>
+        <div>
+            <p>LED Control</p>
+            <input type="button" id="ledButton" value="OFF" style="color:red" onclick="toggle(this);">
+        </div>
+        <div>
+            <p>Battery Levels:</p> 
+            <p id="batlvl"> Starting... </p>
+        </div>
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </body>
+
+</html>
