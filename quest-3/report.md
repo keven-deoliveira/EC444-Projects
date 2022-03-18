@@ -37,8 +37,9 @@ Date: 2022-03-17
 
 
 ## Sketches and Photos
-<center><img src="./images/ece444.png" width="25%" /></center>  
-<center> </center>
+![ESP32 Circuit](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-3/images/IMG-0391.JPG)
+
+![Rpi w/ camera](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-3/images/IMG-0392.JPG)
 
 
 ## Supporting Artifacts
