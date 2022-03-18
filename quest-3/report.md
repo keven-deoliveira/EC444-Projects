@@ -48,6 +48,13 @@ Date: 2022-03-17
 
 ## Modules, Tools, Source Used Including Attribution
 
+- Raspberry Pi
+- ESP32
+- Port Forwarding
+- DDNS
+- NodeJS
+- Socket Programming (UDP)
+
 ## References
 
 -----
