@@ -57,5 +57,9 @@ Date: 2022-03-17
 
 ## References
 
+- Our past skills
+- https://github.com/espressif/esp-idf/tree/master/examples/protocols/sockets/udp_client
+- https://github.com/BU-EC444/code-examples/tree/Spring-2022/i2c-accel
+
 -----
 
