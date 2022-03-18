@@ -43,6 +43,9 @@ In order to complete our task, we made use of past skills to control a GPIO pin 
 
 ## Solution Design
 
+Our solution is real time, accurate and dynamic. The server recieves information from the sensors connected to the esp32 every second while also recieving a continuous stream from the raspberry pi camera. The server also sends an on/off signal to the esp32 on the same 1 second cycle to switch the LED on or off. Our server is listening to multiple ports to collect all of the information recieved from the sensors and camera. The server will parsect all the information by (*** ADD SERVER INFO HERE ***) 
+
+We port forwarded the server through a DDNS so that the webpage that the server creates with all the calculated information and graphs will be accessable to any device.
 
 
 ## Sketches and Photos
