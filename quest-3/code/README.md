@@ -1,8 +1,10 @@
 # Code Readme
 
-Please describe what is in your code folder and subfolders. Make it
-easy for us to navigate this space.
+BrianSandbox/ contains our JavaScript code that runs our server, as well as our HTML page that contains our frontend.
 
-Also
-- Please provide your name and date in any code submitted
-- Indicate attributrion for any code you have adopted from elsewhere
+esp_code/ contains all our code for the ESP32, including:
+
+- ADC thermistor driver
+- Accelerometer driver
+- UDP client
+- LED GPIO driver
