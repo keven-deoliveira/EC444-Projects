@@ -49,9 +49,9 @@ One other way the way UDP connection is set up. Right now we have a handshake wh
 
 ## Solution Design
 
-Our solution is real time, accurate and dynamic. The server recieves information from the sensors connected to the esp32 every second while also recieving a continuous stream from the raspberry pi camera. The server also sends an on/off signal to the esp32 on the same 1 second cycle to switch the LED on or off. Our server is listening to multiple ports to collect all of the information recieved from the sensors and camera. The server will parsect all the information by (*** ADD SERVER INFO HERE ***) 
+Our solution is real time, accurate and dynamic. The server recieves information from the sensors connected to the esp32 every second while also recieving a continuous stream from the raspberry pi camera. The server also sends an on/off signal to the esp32 on the same 1 second cycle to switch the LED on or off. Our server is listening to multiple ports to collect all of the information recieved from the sensors and camera. The server will parsect all the information all of the information being sent to it and create an HTML page with all the information in one location.
 
-We port forwarded the server through a DDNS so that the webpage that the server creates with all the calculated information and graphs will be accessable to any device.
+We port forwarded the server through a DDNS so that the HTML page that the server creates with all the calculated information and graphs will be accessable to any device anywhere.
 
 
 ## Sketches and Photos
@@ -62,7 +62,7 @@ We port forwarded the server through a DDNS so that the webpage that the server 
 ![asdfasdf](https://user-images.githubusercontent.com/65934595/159101046-24356327-0413-46c5-86e1-1f86e271cd1d.png)
 
 ## Supporting Artifacts
-- [Link to video demo](). Not to exceed 120s
+- [https://drive.google.com/file/d/1Elb9Gx54p-Y0gLpIbjCmB6S_xfnUhwjJ/view?usp=sharing](). Not to exceed 120s
 
 
 ## Modules, Tools, Source Used Including Attribution
