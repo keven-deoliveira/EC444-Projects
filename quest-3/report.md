@@ -15,6 +15,12 @@ This project is the Hurricane Box, complete with remote access. The goal was to 
 
 In order to complete our task, we made use of past skills to control a GPIO pin for the LED, toggling it between high and low depending on the state of the button on our HTML client. Using a UDP connection, we are able to send information between our server and our ESP32, communicating information to our frontend as well as the button toggle for the LED. We used the skills from this past cluster to drive the accelerometer and PiCamera. We also used skills from the last cluster to drive an ADC pin to control the thermistor.
 
+**What are steps you can take to make your device and system low power?**
+There are a few ways to reduce the power required by the system. First we quickly realized that it is more efficent for both power and computation to bunch all the data together for sensor data. this way there are not multiple channels of communication required by opening up multiple servers. We, however, still wanted to decouple the to make sure other systems worked if one went down and split it in to three distinct components. Webcam, sensor data, and website. 
+Another way to reduce power is to reduce the sampling rate, this way the system does not having to constantly be sampling in a high rate and instead can be sampling every second.
+One other way the way UDP connection is set up. Right now we have a handshake where the client and server send and recieve data and need awknowledgement (a successful send and recieve) to move on. Instead we can have it constantly sending for the sensor data and only sending a ON OFF signal when the button is toggled.
+
+
 
 ## Self-Assessment
 
@@ -22,13 +28,13 @@ In order to complete our task, we made use of past skills to control a GPIO pin 
 
 | Objective Criterion | Rating | Max Value  | 
 |---------------------------------------------|:-----------:|:---------:|
-| Objective One | 1  |  1     | 
-| Objective Two | 1 |  1     | 
-| Objective Three | 1 |  1     | 
-| Objective Four | 1 |  1     | 
-| Objective Five | 1 |  1     | 
-| Objective Six | 1 |  1     | 
-| Objective Seven | 1 |  1     | 
+| Measures acceleration, temperature, and battery level | 1  |  1     | 
+| Displays real-time data (temperature, vibration, battery level) at remote clinet via portal using separate IP network. | 1 |  1     | 
+| Controls LED on box from remote client via portal. | 1 |  1     | 
+| Sources web cam video into remote client. | 1 |  1     | 
+| ESP32 and Rpi are connected wirelessly to router; ESP32 sensor data are delivered to local node server (on local laptop or Rpi) | 1 |  1     | 
+| Demo delivered at scheduled time and report submitted in team folder with all required components | 1 |  1     | 
+| Investigative question response | 1 |  1     | 
 
 
 ### Qualitative Criteria
