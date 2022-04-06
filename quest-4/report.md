@@ -34,7 +34,7 @@ Date: 2022-04-05
 
 ## Solution Design
 
-
+We highly recommend looking at the code README.MD that includes a lot of information about how everything was implementing and what libaries were used. This will give a better understanding of how the solution design was implemented. The code README is linked in the supporting artifact, or you can press on the code folder from the current directory.
 
 ## Sketches and Photos
 <center><img src="./images/ece444.png" width="25%" /></center>  
@@ -43,7 +43,7 @@ Date: 2022-04-05
 
 ## Supporting Artifacts
 - [Press here to watch the video demo!](https://drive.google.com/file/d/1_ilZExYNMJ1wD292D40Bi5A-SnDH0FJf/view).
-- [Press here to go to the code README!](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-4/code/README.md).
+- [Press here to go to the code README!](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-4/code/README.md)
 
 
 ## Modules, Tools, Source Used Including Attribution
