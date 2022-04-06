@@ -4,13 +4,13 @@
 <pre>
 code/
 ├── README.md <-- You're here
-└── RaspiFullstack
+└── RaspiFullstack/
     ├── frontend.html
     ├── server.js
     └── voteDB
-└── esp-code
+└── esp-code/
     └── ...
-    └── main
+    └── main/
         └── e-voting.c
     └── ...
 </pre>
