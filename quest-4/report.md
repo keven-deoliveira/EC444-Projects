@@ -70,7 +70,8 @@ Finally, we added a lot of css features to make the website look really nice. Th
 
 
 ## Sketches and Photos
-<center><img src="./images/ece444.png" width="25%" /></center>  
+<center>![Quest4](https://user-images.githubusercontent.com/65934595/162093197-9bc3da2d-c222-4bf6-b11c-ab3969a2653a.png)
+</center>  
 <center> </center>
 
 
