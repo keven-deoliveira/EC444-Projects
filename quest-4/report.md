@@ -19,7 +19,7 @@ Date: 2022-04-05
 | Poll leader reports votes to server database | 1 | 1 | 
 | Portal allows query to database to show actual vote counts per candidate | 1 | 1 | 
 | Operates over multiple sites or with all avaliable fobs (up to 9) | 1 | 1 | 
-| Investigative questino response | 1 | 1 | 
+| Investigative question response | 1 | 1 | 
 
 
 ### Qualitative Criteria
