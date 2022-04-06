@@ -1,7 +1,7 @@
 # Quest Name
-Authors: FirstName1 LastName1, FirstName2 LastName2, FirstName3 LastName 3
+Authors: FirstName1 LastName1, Ayrton Reulet, FirstName3 LastName 3
 
-Date: YYYY-MM-DD
+Date: 2022-04-05
 -----
 
 ## Summary
@@ -42,7 +42,7 @@ Date: YYYY-MM-DD
 
 
 ## Supporting Artifacts
-- [Link to video demo](). Not to exceed 120s
+- [https://drive.google.com/file/d/1_ilZExYNMJ1wD292D40Bi5A-SnDH0FJf/view?usp=sharing](). Not to exceed 120s
 
 
 ## Modules, Tools, Source Used Including Attribution
