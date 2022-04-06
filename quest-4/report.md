@@ -34,7 +34,7 @@ Date: 2022-04-05
 
 ## Solution Design
 
-We highly recommend looking at the code README.MD that includes a lot of information about how everything was implementing and what libaries were used. This will give a better understanding of how the solution design was implemented. The code README is linked in the supporting artifact, or you can press on the code folder from the current directory.
+We highly recommend looking at the code README that includes a lot of information about how everything was implementing and what libaries were used. This will give a better understanding of how the solution design was implemented. The code README is linked in the supporting artifact, or you can press on the code folder from the current directory.
 
 ## Sketches and Photos
 <center><img src="./images/ece444.png" width="25%" /></center>  
