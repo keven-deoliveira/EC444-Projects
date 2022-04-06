@@ -1,6 +1,7 @@
 # Code Readme
 
 ### Folder Structure
+<pre>
 code/
 ├── README.md <-- You're here
 └── RaspiFullstack
@@ -8,6 +9,7 @@ code/
     ├── server.js
     └── voteDB
 └── e-voting.c
+</pre>
 
 
 Also
