@@ -42,7 +42,7 @@ We highly recommend looking at the code README that includes a lot of informatio
 
 
 ## Supporting Artifacts
-- [Press here to watch the video demo!](https://drive.google.com/file/d/1_ilZExYNMJ1wD292D40Bi5A-SnDH0FJf/view).
+- [Press here to watch the video demo!](https://drive.google.com/file/d/1_ilZExYNMJ1wD292D40Bi5A-SnDH0FJf/view)
 - [Press here to go to the code README!](https://github.com/BU-EC444/Team13-DeOliveira-Jung-Reulet/blob/master/quest-4/code/README.md)
 
 
