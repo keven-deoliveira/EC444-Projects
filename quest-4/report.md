@@ -1,5 +1,5 @@
-# Quest Name
-Authors: FirstName1 LastName1, Ayrton Reulet, FirstName3 LastName 3
+# Electronic Voting
+Authors: Keven DeOliveira, Ayrton Reulet, Brian Jung
 
 Date: 2022-04-05
 -----
@@ -42,7 +42,7 @@ Date: 2022-04-05
 
 
 ## Supporting Artifacts
-- [https://drive.google.com/file/d/1_ilZExYNMJ1wD292D40Bi5A-SnDH0FJf/view?usp=sharing](). Not to exceed 120s
+- [Link to video demo]().
 
 
 ## Modules, Tools, Source Used Including Attribution
