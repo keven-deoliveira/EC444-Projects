@@ -1,7 +1,7 @@
-# Quest Name
-Authors: FirstName1 LastName1, FirstName2 LastName2, FirstName3 LastName 3
+# Cruise Control
+Authors: Keven DeOliveira, Brian Jung, Aryton Reulet
 
-Date: YYYY-MM-DD
+Date: 2022-04-22
 -----
 
 ## Summary
@@ -13,23 +13,23 @@ Date: YYYY-MM-DD
 
 | Objective Criterion | Rating | Max Value  | 
 |---------------------------------------------|:-----------:|:---------:|
-| Objective One |  |  1     | 
-| Objective Two |  |  1     | 
-| Objective Three |  |  1     | 
-| Objective Four |  |  1     | 
-| Objective Five |  |  1     | 
-| Objective Six |  |  1     | 
-| Objective Seven |  |  1     | 
+| Controls steering to maintain center of course +/- 25cm for entire length | 1 |  1     | 
+| Uses PID for speed control holding a fixed speed setpoint after startup and before slowdown [0.1-0.4 m/s] | 1 |  1     | 
+| Stops within 20cm of end without collision | 1 |  1     | 
+| Start and stop instructions issued wirelessly from phone, laptop, or ESP | 1 |  1     | 
+| Measures wheel speed or distance | 1 |  1     | 
+| Uses alpha display to show current distance or speed | 1 |  1     | 
+| Successfully traverses A-B in one go, no hits or nudges | 1 |  1     | 
 
 
 ### Qualitative Criteria
 
 | Qualitative Criterion | Rating | Max Value  | 
 |---------------------------------------------|:-----------:|:---------:|
-| Quality of solution |  |  5     | 
-| Quality of report.md including use of graphics |  |  3     | 
-| Quality of code reporting |  |  3     | 
-| Quality of video presentation |  |  3     | 
+| Quality of solution | 5 |  5     | 
+| Quality of report.md including use of graphics | 3 |  3     | 
+| Quality of code reporting | 3 |  3     | 
+| Quality of video presentation | 3 |  3     | 
 
 
 ## Solution Design
@@ -48,6 +48,9 @@ Date: YYYY-MM-DD
 ## Modules, Tools, Source Used Including Attribution
 
 ## References
+- Cluster 5 skills
+- Provided links in quest 5
+- Provided links in cluster 5
 
 -----
 
