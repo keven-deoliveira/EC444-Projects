@@ -7,3 +7,5 @@ POWERRRR:
 - 5V
 
 * DO NOT connect the esp directly to the car wires it will burn it out. Esp has to be connected to the car throught the H-Bridge.
+
+* If you have to make a sacrafice skip the PID controller for the quest
