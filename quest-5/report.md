@@ -1,5 +1,5 @@
 # Cruise Control
-Authors: Keven DeOliveira, Brian Jung, Aryton Reulet
+Authors: Keven DeOliveira, Brian Jung, Ayrton Reulet
 
 Date: 2022-04-22
 -----
@@ -42,7 +42,11 @@ Date: 2022-04-22
 
 
 ## Supporting Artifacts
-- [Link to video demo](). Not to exceed 120s
+- [https://drive.google.com/file/d/1kvqwCQBQP28MW1RcSRvF-KN-pCSozhlZ/view?usp=sharing](). Not to exceed 120s
+
+UDP VIDEO: https://drive.google.com/file/d/18dYRJ_PFgDP6qInHt3qFe9l_b0fncPgg/view?usp=sharing
+Stopping Video: https://drive.google.com/file/d/1I4LekqM_9tsAxEZcZT6NDzT9R9GB0hK-/view?usp=sharing
+Everything Combined: https://drive.google.com/file/d/1I4LekqM_9tsAxEZcZT6NDzT9R9GB0hK-/view?usp=sharing
 
 
 ## Modules, Tools, Source Used Including Attribution
