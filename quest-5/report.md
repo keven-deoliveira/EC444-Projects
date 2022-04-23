@@ -63,9 +63,9 @@ Please press on the hyperlinks below to watch the corresponding videos!
 - [Explanation Video](https://drive.google.com/file/d/1kvqwCQBQP28MW1RcSRvF-KN-pCSozhlZ/view?usp=sharing)
 (Not to exceed 120s)
 - [UDP Video](https://drive.google.com/file/d/18dYRJ_PFgDP6qInHt3qFe9l_b0fncPgg/view?usp=sharing)
--[Stopping Video](https://drive.google.com/file/d/1I4LekqM_9tsAxEZcZT6NDzT9R9GB0hK-/view?usp=sharing)
--[Starting at Angle](https://drive.google.com/file/d/1Isrvh0f9Ko2_EhKXBczr4NJ8KEUSqa7p/view?usp=sharing)
--[Everything Combined](https://drive.google.com/file/d/1Hu6k2RLMVV-4Pq6ZsHe-BTDQJk5pnt0m/view?usp=sharing)
+- [Stopping Video](https://drive.google.com/file/d/1I4LekqM_9tsAxEZcZT6NDzT9R9GB0hK-/view?usp=sharing)
+- [Starting at Angle](https://drive.google.com/file/d/1Isrvh0f9Ko2_EhKXBczr4NJ8KEUSqa7p/view?usp=sharing)
+- [Everything Combined](https://drive.google.com/file/d/1Hu6k2RLMVV-4Pq6ZsHe-BTDQJk5pnt0m/view?usp=sharing)
 
 
 ## Modules, Tools, Source Used Including Attribution
