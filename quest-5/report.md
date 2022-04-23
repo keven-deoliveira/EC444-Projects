@@ -58,7 +58,7 @@ Finally, we added UDP and used if statements and checks to turn the vehicle on o
 ### How our solution went beyond in terms of quality.
 First of all, we put a lot of effort to make the crawler not only functional in terms of meeting all the solution requirements but stylish. We have added a flag that read "Team 13" in the back as an added feature. On top of that we got a wooden plank that can host multiple breadboards as well as sensors. Instead of having just one sensor on the side (while we needed only one for this quest), we also added one on the other side so that the car was more "aware" of the surrounding.
 As you can see from our stopping video (Linked in Supporting Artifacts), we also made our solution be able to stop within 10cm of the end of track without collision. This is a 2X improvement of the 20cm of end of track. 
-Finally, you can also see 
+Finally, you can also see from the starting at angle video that our PID control for the wall works with a different starting angle. Which shows the quality of our solution.
 
 
 ## Sketches and Photos
